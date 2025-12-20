@@ -3,19 +3,23 @@
 ## Overview
 
 This is a simple STM32F407 template project using CubeMX and HAL.
-It is designed to work **inside Windows**, with **Windows Subsystem for Linux (WSL2) used for building** via Makefiles.
+It is designed to work **inside Windows**, with **Windows Subsystem for Linux (WSL2)** used for building via Makefiles.
 
 ## Project Structure
 
 ```
 STM32_Template/
 ├─ .vscode/       # VS Code configuration files
+├─ App/           # Application source and header files
+├─ Board_supp/    # Other boards source and header files
 ├─ build/         # Compiled binaries (.elf, .bin, .hex)
-├─ Core/          # Source and header files
+├─ Core/          # STM32 core source and header files
+├─ Debug          # Debug files  
 ├─ Drivers/       # HAL and CMSIS drivers
 ├─ flash.bat      # Windows DFU flash script
 ├─ flash.sh       # Linux / WSL2 DFU flash script
 ├─ Makefile       # Build instructions (used inside WSL2)
+├─ Middleware     # Middleware source and header files
 └─ README.md      # This file
 ```
 
@@ -24,11 +28,18 @@ STM32_Template/
 ### 1. Clone Template
 
 ```bash
-git clone https://github.com/yourusername/STM32-Template.git
-cd STM32-Template
+git clone https://github.com/medHalim/STM32F4-Project-Template.git
+cd STM32F4-Project-Template-main
 ```
+### 2. Configure pins in STM32CubeMX
 
-### 2. Build inside WSL2
+Rename `template.ioc` to your liking, open and modify it to generate code.
+
+### 3. Edit code
+
+VS Code is recommended.
+
+### 4. Build inside WSL2
 
 ```bash
 make all
